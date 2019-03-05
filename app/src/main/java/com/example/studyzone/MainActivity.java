@@ -1,31 +1,39 @@
 package com.example.studyzone;
 
-import android.app.ActionBar;
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.ImageView;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private EditText itemET;
+    private Button btn;
+    private ListView itemsList;
 
+    private ArrayList<String> items;
+    private ArrayAdapter<String> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        itemET = findViewById(R.id.item_edit_text);
+        btn = findViewById(R.id.add_btn);
+        itemsList = findViewById(R.id.items_list);
+
+        btn.setOnClickListener(this);
 
 
-        setContentView(R.layout.activity_main);
-        //This gives that 3 second delay when you first open it
-        new Timer().schedule(new TimerTask() {
-            public void run() {
-                startActivity(new Intent(MainActivity.this, Statistics.class));
-                finish();
-
-            }
-        }, 3000);
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+
+
 }
