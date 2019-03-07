@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -36,11 +37,39 @@
 
     <ListView
         android:id="@+id/items_list"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
 
-        android:layout_height="match_parent"
+        android:layout_height="592dp"
 
         android:layout_marginBottom="12dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/tempname0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="Reminders" />
+        <Button
+            android:id="@+id/tempname1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="Music" />
+        <Button
+            android:id="@+id/tempname2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="Stats" />
+        <Button
+            android:id="@+id/tempname3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="ToDo" />
+    </LinearLayout>
 
 </LinearLayout>
