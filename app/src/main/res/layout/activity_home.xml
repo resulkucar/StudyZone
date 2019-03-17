@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <Button
+        android:id="@+id/listBtn"
+        android:layout_width="102dp"
+        android:layout_height="50dp"
+        android:text="To-do List"
+        android:layout_alignParentBottom="true"/>
+
+    <Button
+        android:id="@+id/statsBtn"
+        android:layout_width="102dp"
+        android:layout_height="50dp"
+        android:text="stats"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="102dp"/>
+
+    <Button
+        android:id="@+id/musicBtn"
+        android:layout_width="102dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="306dp"
+        android:text="music" />
+
+    <Button
+        android:id="@+id/reminderBtn"
+        android:layout_width="102dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="204dp"
+        android:layout_marginBottom="0dp"
+        android:text="reminders" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="Welcome To StudyZone!"
+        android:textSize="70dp"
+        android:layout_marginTop="225dp"/>
+
+</RelativeLayout>

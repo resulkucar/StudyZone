@@ -44,6 +44,7 @@ public class startTime extends AppCompatActivity {
                 intent.putExtra("date", date);
                 intent.putExtra("day", day);
                 startActivity(intent);
+                finish();
             }
         });
 

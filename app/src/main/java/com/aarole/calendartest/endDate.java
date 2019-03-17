@@ -10,8 +10,6 @@ import java.text.SimpleDateFormat;
 
 public class endDate extends AppCompatActivity {
 
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +32,7 @@ public class endDate extends AppCompatActivity {
                 intent.putExtra("date", date);
                 intent.putExtra("day", day);
                 startActivity(intent);
+                finish();
             }
         });
     }
