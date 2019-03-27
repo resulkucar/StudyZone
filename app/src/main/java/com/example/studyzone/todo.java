@@ -1,4 +1,4 @@
-package com.example.studyzone;
+    package com.example.studyzone;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class todo extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
     private EditText itemET;
     private Button btn;
     private ListView itemsList;
