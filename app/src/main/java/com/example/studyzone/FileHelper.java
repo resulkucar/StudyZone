@@ -11,8 +11,15 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class FileHelper {
+    //the file name for the data file that contain the todo list
     public static final String FILENAME = "listinfo.dat";
 
+    /**
+     * writeData
+     * write data
+     * @param items
+     * @param context
+     */
     public static void writeData(ArrayList<String> items, Context context){
         try {
             FileOutputStream fos = context.openFileOutput(FILENAME, Context.MODE_PRIVATE);
