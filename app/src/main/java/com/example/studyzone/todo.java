@@ -62,7 +62,7 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
                 //String that stores what the text that was entered into the EditText
                 String itemEntered = itemET.getText().toString();
                 if (itemEntered.equals("")){
-
+                    Toast.makeText(this,"You cant add nothing...",Toast.LENGTH_SHORT).show();break;
                 }
                 //add to the adapter that was previously defined to be a simple list layout in the onCreate method
                 //also add it the the items arrayList
