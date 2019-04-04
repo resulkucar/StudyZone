@@ -39,7 +39,8 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
         itemET = findViewById(R.id.item_edit_text);
         btn = findViewById(R.id.add_btn);
         itemsList = findViewById(R.id.items_list);
-        items = FileHelper.readData(this);
+        FileHelper fileHelper = new FileHelper();
+        items = fileHelper.readData(this);
         adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,items);
         itemsList.setAdapter(adapter);
         btn.setOnClickListener(this);
@@ -60,13 +61,17 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
             case R.id.add_btn:
                 //String that stores what the text that was entered into the EditText
                 String itemEntered = itemET.getText().toString();
+                if (itemEntered.equals("")){
+
+                }
                 //add to the adapter that was previously defined to be a simple list layout in the onCreate method
                 //also add it the the items arrayList
                 adapter.add(itemEntered);
                 //reset the EditText to an empty string
                 itemET.setText("");
                 //write the data to the file
-                FileHelper.writeData(items,this);
+                FileHelper fileHelper = new FileHelper();
+                fileHelper.writeData(items,this);
                 //Toast the user with a simple "Items Added" popup
                 Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
                 break;
@@ -88,7 +93,8 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
         //notify the adapter that a change has been made in the ArrayList and to update (effectively removing the item that is display on the screen that was clicked on)
         adapter.notifyDataSetChanged();
         //rewrite the data to the file so it remains updated
-        FileHelper.writeData(items, this);
+        FileHelper fileHelper = new FileHelper();
+        fileHelper.writeData(items, this);
         //Toast the user and show that the item has been deleted
         Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show();
     }

@@ -10,7 +10,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-public class FileHelper {
+public class FileHelper extends File {
     //the file name for the data file that contain the todo list
     public static final String FILENAME = "listinfo.dat";
 
@@ -20,7 +20,8 @@ public class FileHelper {
      * @param items
      * @param context
      */
-    public static void writeData(ArrayList<String> items, Context context){
+
+    public void writeData(ArrayList<String> items, Context context){
         try {
             FileOutputStream fos = context.openFileOutput(FILENAME, Context.MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -33,7 +34,7 @@ public class FileHelper {
         }
 
     }
-    public static ArrayList<String> readData(Context context){
+    public  ArrayList<String> readData(Context context){
         ArrayList<String> itemsList = null;
         try {
             FileInputStream fis = context.openFileInput(FILENAME);
