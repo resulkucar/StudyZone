@@ -1,14 +1,11 @@
 package com.aarole.calendartest;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -38,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_confreminder);
 
         Intent in = getIntent();
         Bundle b = in.getExtras();
@@ -65,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String title = edit.getText().toString();
                 reminders.add(title);
-                remIO.writeData(reminders, getApplicationContext());
+                remIO.writeData(reminders, MainActivity.this);
 
                 Calendar calendar = Calendar.getInstance();
 
@@ -74,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 calendar1.set(Calendar.MINUTE, minute);
                 calendar1.set(Calendar.SECOND, 0);
                 beginTime.add(calendar1.getTimeInMillis());
-                begIO.writeData(beginTime, getApplicationContext());
+                begIO.writeData(beginTime, MainActivity.this);
 
                 Calendar calendar2 = Calendar.getInstance();
                 calendar2.set(Calendar.YEAR, year);
@@ -84,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 calendar2.set(Calendar.MINUTE, minute);
                 calendar2.set(Calendar.SECOND, 0);
                 endTime.add(calendar2.getTimeInMillis());
-                endIO.writeData(endTime, getApplicationContext());
+                endIO.writeData(endTime, MainActivity.this);
 
 
                 Intent intent = new Intent(Intent.ACTION_EDIT);

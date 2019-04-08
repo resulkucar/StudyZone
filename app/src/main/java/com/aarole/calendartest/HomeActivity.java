@@ -25,8 +25,15 @@ public class HomeActivity extends AppCompatActivity {
         findViewById(R.id.musicBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(HomeActivity.this, playlistPicker.class);
-                startActivity(intent2);
+                Intent intent = new Intent(HomeActivity.this, playlistPicker.class);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.listBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, todo.class);
+                startActivity(intent);
             }
         });
     }

@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -28,9 +29,9 @@ public class remList extends AppCompatActivity {
         setContentView(R.layout.activity_rem_list);
 
         ListView listView = findViewById(R.id.list);
-        reminders = remIO.readData(getApplicationContext());
-        beginTime = begIO.readData(getApplicationContext());
-        endTime = endIO.readData(getApplicationContext());
+        reminders = remIO.readData(this);
+        beginTime = begIO.readData(this);
+        endTime = endIO.readData(this);
 
 
         adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,reminders);
@@ -49,14 +50,22 @@ public class remList extends AppCompatActivity {
                 Long begin = beginTime.get(position);
                 Long end = endTime.get(position);
                 reminders.remove(position);
+                beginTime.remove(position);
+                endTime.remove(position);
                 adapter.notifyDataSetChanged();
+                remIO.writeData(reminders, remList.this);
+                begIO.writeData(beginTime, remList.this);
+                endIO.writeData(endTime, remList.this);
+
+                Toast.makeText(remList.this, "Make sure to delete the reminder from your Google Calendar", Toast.LENGTH_SHORT).show();
+
 
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setType("vnd.android.cursor.item/event");
-                intent.putExtra("beginTime", begin);
-                intent.putExtra("allDay", false);
-                intent.putExtra("title", title);
-                intent.putExtra("endTime", end);
+//                intent.putExtra("beginTime", begin);
+//                intent.putExtra("allDay", false);
+//                intent.putExtra("title", title);
+//                intent.putExtra("endTime", end);
                 startActivity(intent);
                 finish();
 

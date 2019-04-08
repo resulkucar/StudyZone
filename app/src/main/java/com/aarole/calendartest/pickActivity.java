@@ -24,24 +24,32 @@ public class pickActivity extends AppCompatActivity {
         findViewById(R.id.removeBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(pickActivity.this, remList.class);
-                startActivity(intent1);
+                Intent intent = new Intent(pickActivity.this, remList.class);
+                startActivity(intent);
             }
         });
 
         findViewById(R.id.musicBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent3 = new Intent(pickActivity.this, playlistPicker.class);
-                startActivity(intent3);
+                Intent intent = new Intent(pickActivity.this, playlistPicker.class);
+                startActivity(intent);
             }
         });
 
         findViewById(R.id.homeBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(pickActivity.this, HomeActivity.class);
-                startActivity(intent2);
+                Intent intent = new Intent(pickActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.listBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(pickActivity.this, todo.class);
+                startActivity(intent);
             }
         });
     }
