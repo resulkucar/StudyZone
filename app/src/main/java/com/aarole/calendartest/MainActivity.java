@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private static ArrayList<String> reminders = new ArrayList<>();
     private static ArrayList<Long> beginTime = new ArrayList<>();
     private static ArrayList<Long> endTime = new ArrayList<>();
+    private static ArrayList<String> ids = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +62,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String title = edit.getText().toString();
+                String id = Integer.toString(eventID.getID());
+                ids.add(id);
                 reminders.add(title);
                 remIO.writeData(reminders, MainActivity.this);
+                idIO.writeData(ids, MainActivity.this);
 
                 Calendar calendar = Calendar.getInstance();
 
@@ -86,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(Intent.ACTION_EDIT);
                 intent.setType("vnd.android.cursor.item/event");
+                intent.putExtra("id", id);
                 intent.putExtra("beginTime", calendar1.getTimeInMillis());
                 intent.putExtra("allDay", false);
                 //intent.putExtra("rrule", "FREQ=WEEKLY"); Google Calendar is currently causing errors when setting recurrence rule.

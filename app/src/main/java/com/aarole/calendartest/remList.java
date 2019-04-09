@@ -21,6 +21,7 @@ public class remList extends AppCompatActivity {
     private ArrayList<String> reminders;
     private static ArrayList<Long> beginTime;
     private static ArrayList<Long> endTime;
+    private ArrayList<String> ids;
     private ArrayAdapter<String> adapter;
 
     @Override
@@ -32,9 +33,10 @@ public class remList extends AppCompatActivity {
         reminders = remIO.readData(this);
         beginTime = begIO.readData(this);
         endTime = endIO.readData(this);
+        ids = idIO.readData(this);
 
 
-        adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,reminders);
+        adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, reminders);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -62,10 +64,11 @@ public class remList extends AppCompatActivity {
 
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setType("vnd.android.cursor.item/event");
-//                intent.putExtra("beginTime", begin);
+//                intent.putExtra("id", ids.get(position));
+//                intent.putExtra("beginTime", beginTime.get(position));
 //                intent.putExtra("allDay", false);
-//                intent.putExtra("title", title);
-//                intent.putExtra("endTime", end);
+//                intent.putExtra("title", reminders.get(position));
+//                intent.putExtra("endTime", endTime.get(position));
                 startActivity(intent);
                 finish();
 

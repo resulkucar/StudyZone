@@ -65,7 +65,7 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
      */
     @Override
     public void onClick(View v) {
-        //switch that looks at the view and checks to see which button is pressed ( in this case there is only the add button
+        //switch that looks at the view and checks to see which button is pressed
         switch(v.getId()){
             //case for the add button
             case R.id.add_btn:
