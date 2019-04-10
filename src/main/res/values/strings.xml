@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">StudyZone</string>
+    <string name="large_text">
+        "Welcome to StudyZone!"
+        "\n\nStudyZone brings you the perfectly fitting platform to map"
+        "your study to-do's in an instant. StudyZone provides four"
+        "main features to benefit your academic lifestyle.\n\n\n"
+        "TO-DO LIST"
+        "\n\nThe To-Do List will help you keep track of"
+        "all your  activities while assuring that you complete each"
+        "task before their due dates!"
+        "\n\n\nMUSIC-STUDY PLAYLIST"
+        "\n\nStudyZone incorporates this Music-Study feature for you rockin'"
+        "studiers who achieve more with the power of music! We encourage"
+        "you to link your Spotify account, but if you don't have one,"
+        "we have pre-loaded playlists you can select from to satisfy your"
+        "senses. Jam on!"
+        "\n\nREMINDERS"
+        "\n\nReminders are essential in urging you to success! Set reminders"
+        "to remind yourself of your upcoming exams, quizzes or homework due"
+        "dates. You can also set a reminder to study in your free time - which"
+        "you can set up yourself within the StudyZone app!"
+        "\n\nSTATISTICS"
+        "\n\nStudyZone feels its important for you to obtain feedback from us according"
+        "to your performances per assignment and the amount of time you took to study for them."
+        "This feedback will lead to you optimizing your time very well, ensuring you are the"
+        "best student you can be!"
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="get_started">Get Started</string>
+</resources>
