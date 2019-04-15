@@ -77,13 +77,18 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
                 Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
                 break;
             }case R.id.stats:{
+                Toast.makeText(this, "STATS", Toast.LENGTH_SHORT).show();
+                break;
                 //do intent stuff
             }case R.id.todo:{
-
+                Toast.makeText(this, "TODO", Toast.LENGTH_SHORT).show();
+                break;
             }case R.id.reminders:{
-
-            }case R.id.music{
-
+                Toast.makeText(this, "REMINDER", Toast.LENGTH_SHORT).show();
+                break;
+            }case R.id.music:{
+                Toast.makeText(this, "MUSIC", Toast.LENGTH_SHORT).show();
+                break;
             }
 
 
