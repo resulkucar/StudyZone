@@ -19,7 +19,7 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
     //The text field
     private EditText itemET;
     //the add button
-    private Button btn;
+    private Button btn,stats,todo,reminder,music;
     //The item list that is displayed under the text field
     private ListView itemsList;
     //array list of strings that contain the items in the ListView
@@ -38,12 +38,20 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
         setContentView(R.layout.activity_main);
         itemET = findViewById(R.id.item_edit_text);
         btn = findViewById(R.id.add_btn);
+        stats = findViewById(R.id.stats);
         itemsList = findViewById(R.id.items_list);
         FileHelper fileHelper = new FileHelper();
         items = fileHelper.readData(this);
         adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,items);
         itemsList.setAdapter(adapter);
         btn.setOnClickListener(this);
+        stats.setOnClickListener(this);
+        reminder = findViewById(R.id.reminders);
+        reminder.setOnClickListener(this);
+        todo = findViewById(R.id.todo);
+        todo.setOnClickListener(this);
+        music = findViewById(R.id.music);
+        music.setOnClickListener(this);
         itemsList.setOnItemClickListener(this);
 
     }
