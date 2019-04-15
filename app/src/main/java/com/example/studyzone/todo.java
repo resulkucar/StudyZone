@@ -58,11 +58,12 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
         //switch that looks at the view and checks to see which button is pressed ( in this case there is only the add button
         switch(v.getId()){
             //case for the add button
-            case R.id.add_btn:
+            case R.id.add_btn: {
                 //String that stores what the text that was entered into the EditText
                 String itemEntered = itemET.getText().toString();
-                if (itemEntered.equals("")){
-                    Toast.makeText(this,"You cant add nothing...",Toast.LENGTH_SHORT).show();break;
+                if (itemEntered.equals("")) {
+                    Toast.makeText(this, "You can't add nothing...", Toast.LENGTH_SHORT).show();
+                    break;
                 }
                 //add to the adapter that was previously defined to be a simple list layout in the onCreate method
                 //also add it the the items arrayList
@@ -71,10 +72,22 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
                 itemET.setText("");
                 //write the data to the file
                 FileHelper fileHelper = new FileHelper();
-                fileHelper.writeData(items,this);
+                fileHelper.writeData(items, this);
                 //Toast the user with a simple "Items Added" popup
                 Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
                 break;
+            }case R.id.stats:{
+                //do intent stuff
+            }case R.id.todo:{
+
+            }case R.id.reminders:{
+
+            }case R.id.music{
+
+            }
+
+
+
         }
     }
 

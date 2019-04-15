@@ -46,26 +46,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <Button
-            android:id="@+id/tempname0"
+            android:id="@+id/reminders"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".5"
             android:text="Reminders" />
+
         <Button
-            android:id="@+id/tempname1"
+            android:id="@+id/music"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".5"
             android:text="Music" />
+
         <Button
-            android:id="@+id/tempname2"
+            android:id="@+id/stats"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".5"
             android:text="Stats" />
+
         <Button
-            android:id="@+id/tempname3"
+            android:id="@+id/todo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".5"
