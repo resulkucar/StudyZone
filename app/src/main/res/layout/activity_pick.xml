@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pickActivity">
+
+    <Button
+        android:id="@+id/addBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Add Reminder"
+        android:layout_marginTop="275dp"/>
+
+    <Button
+        android:id="@+id/removeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="remove Reminder"
+        android:layout_marginTop="350dp"/>
+
+    <Button
+        android:id="@+id/musicBtn"
+        android:layout_width="136dp"
+        android:layout_height="50dp"
+        android:text="music"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="272dp"/>
+    <Button
+        android:id="@+id/listBtn"
+        android:layout_width="136dp"
+        android:layout_height="50dp"
+        android:text="to-do list"
+        android:layout_alignParentBottom="true"/>
+
+    <Button
+        android:id="@+id/statsBtn"
+        android:layout_width="136dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:text="stats"
+        android:layout_marginLeft="136dp"/>
+    <Button
+        android:id="@+id/homeBtn"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:text="Home"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>
