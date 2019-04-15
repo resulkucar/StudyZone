@@ -12,23 +12,20 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class todo extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener{
+
+public class todo extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
     //Decalring variables to be used in todo class
 
     //The text field
     private EditText itemET;
     //the add button
-    private Button btn;
+    private Button btn,stats,todo,reminder,music;
     //The item list that is displayed under the text field
     private ListView itemsList;
     //array list of strings that contain the items in the ListView
     private ArrayList<String> items;
     //adapter is used to add the items to the list (required)
     private ArrayAdapter<String> adapter;
-
-    private Button reminders;
-//    private Button home;
-    private Button music;
 
     /**
      * onCreate
@@ -38,21 +35,22 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_todo);
+        setContentView(R.layout.activity_main);
         itemET = findViewById(R.id.item_edit_text);
         btn = findViewById(R.id.add_btn);
+        stats = findViewById(R.id.statsBtn);
         itemsList = findViewById(R.id.items_list);
-        reminders = findViewById(R.id.reminderBtn);
-        music = findViewById(R.id.musicBtn);
-//        home = findViewById(R.id.homeBtn);
         FileHelper fileHelper = new FileHelper();
         items = fileHelper.readData(this);
         adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,items);
         itemsList.setAdapter(adapter);
         btn.setOnClickListener(this);
-//        reminders.setOnClickListener(this);
-//        home.setOnClickListener(this);
-//        music.setOnClickListener(this);
+        stats.setOnClickListener(this);
+        reminder = findViewById(R.id.remindersBtn);
+        reminder.setOnClickListener(this);
+        todo.setOnClickListener(this);
+        music = findViewById(R.id.musicBtn);
+        music.setOnClickListener(this);
         itemsList.setOnItemClickListener(this);
 
     }
@@ -67,11 +65,12 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
         //switch that looks at the view and checks to see which button is pressed ( in this case there is only the add button
         switch(v.getId()){
             //case for the add button
-            case R.id.add_btn:
+            case R.id.add_btn: {
                 //String that stores what the text that was entered into the EditText
                 String itemEntered = itemET.getText().toString();
-                if (itemEntered.equals("")){
-                    Toast.makeText(this,"You cant add nothing...",Toast.LENGTH_SHORT).show();break;
+                if (itemEntered.equals("")) {
+                    Toast.makeText(this, "You can't add nothing...", Toast.LENGTH_SHORT).show();
+                    break;
                 }
                 //add to the adapter that was previously defined to be a simple list layout in the onCreate method
                 //also add it the the items arrayList
@@ -80,22 +79,24 @@ public class todo extends AppCompatActivity implements View.OnClickListener, Ada
                 itemET.setText("");
                 //write the data to the file
                 FileHelper fileHelper = new FileHelper();
-                fileHelper.writeData(items,this);
+                fileHelper.writeData(items, this);
                 //Toast the user with a simple "Items Added" popup
                 Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
                 break;
-//            case R.id.homeBtn:
-//                Intent intent = new Intent(todo.this, HomeActivity.class);
-//                startActivity(intent);
-//                break;
-//            case R.id.remindersBtn:
-//                Intent intent1 = new Intent(todo.this, pickActivity.class);
-//                startActivity(intent1);
-//                break;
-//            case R.id.musicBtn:
-//                Intent intent2 = new Intent(todo.this, playlistPicker.class);
-//                startActivity(intent2);
-//                break;
+            }case R.id.statsBtn: {
+                Toast.makeText(this, "STATS", Toast.LENGTH_SHORT).show();
+                break;
+                //do intent stuff
+            }case R.id.remindersBtn:{
+                Toast.makeText(this, "REMINDER", Toast.LENGTH_SHORT).show();
+                break;
+            }case R.id.musicBtn:{
+                Toast.makeText(this, "MUSIC", Toast.LENGTH_SHORT).show();
+                break;
+            }
+
+
+
         }
     }
 
