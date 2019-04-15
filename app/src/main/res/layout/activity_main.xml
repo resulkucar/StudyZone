@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Course:"
+        android:textSize="35dp"
+        android:layout_marginTop="250dp"/>
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Hours:"
+        android:textSize="35dp"
+        android:layout_marginTop="335dp"/>
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="155dp"
+        android:id="@+id/txtCourse"/>
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="335dp"
+        android:layout_marginLeft="155dp"
+        android:id="@+id/txtHours"/>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Add"
+        android:textSize="25dp"
+        android:id="@+id/addBtn"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="50dp"/>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="cancel"
+        android:textSize="25dp"
+        android:id="@+id/cancelBtn"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="205dp"/>
+
+</RelativeLayout>
