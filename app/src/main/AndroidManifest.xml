@@ -17,6 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".todo"/>
+        <activity android:name=".ConfActivity"/>
+        <activity android:name=".endDate"/>
+        <activity android:name=".pickActivity"/>
+        <activity android:name=".playlistPicker"/>
+        <activity android:name=".remList"/>
+        <activity android:name=".startTime"/>
     </application>
 
 </manifest>
