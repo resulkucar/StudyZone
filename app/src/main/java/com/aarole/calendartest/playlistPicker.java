@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class playlistPicker extends AppCompatActivity {
+public class playlistPicker extends AppCompatActivity implements randomPicker<Uri>{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +15,7 @@ public class playlistPicker extends AppCompatActivity {
         setContentView(R.layout.activity_playlist_picker);
 
         Button user = findViewById(R.id.myplaylistsBtn);
-        Button random = findViewById(R.id.randomBtn);
+        final Button random = findViewById(R.id.randomBtn);
         Button home = findViewById(R.id.homeBtn);
 
         user.setOnClickListener(new View.OnClickListener() {
@@ -30,14 +30,13 @@ public class playlistPicker extends AppCompatActivity {
         random.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int random = (int)(Math.random()*4);
                 Uri r1 = Uri.parse("https://open.spotify.com/playlist/2jArGkAqIWi2Sx8Hypa31p");
                 Uri r2 = Uri.parse("https://open.spotify.com/playlist/7L5cshmVSw9v0X0mZIn78U");
                 Uri r3 = Uri.parse("https://open.spotify.com/playlist/37nHJKXeTOgQhwZXvRtGfm");
                 Uri r4 = Uri.parse("https://open.spotify.com/playlist/2amhJhphcPln6Ybsjh6IYH");
 
                 Uri[] r = {r1, r2, r3, r4};
-                Intent intent1 = new Intent(Intent.ACTION_VIEW, r[random]);
+                Intent intent1 = new Intent(Intent.ACTION_VIEW, random(r));
                 startActivity(intent1);
             }
         });
@@ -57,5 +56,11 @@ public class playlistPicker extends AppCompatActivity {
                 startActivity(intent3);
             }
         });
+    }
+
+    @Override
+    public Uri random(Uri[] a){
+        int r = (int)(Math.random()*randomPicker.total);
+        return a[r];
     }
 }

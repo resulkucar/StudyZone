@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -50,13 +51,17 @@ public class remList extends AppCompatActivity {
                 Long end = endTime.get(position);
                 reminders.remove(position);
                 adapter.notifyDataSetChanged();
+                remIO.writeData(reminders, remList.this);
+                begIO.writeData(beginTime, remList.this);
+                endIO.writeData(endTime, remList.this);
 
+                Toast.makeText(remList.this, "Make sure to delete the reminder from your Google Calendar", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setType("vnd.android.cursor.item/event");
-                intent.putExtra("beginTime", begin);
-                intent.putExtra("allDay", false);
-                intent.putExtra("title", title);
-                intent.putExtra("endTime", end);
+//                intent.putExtra("beginTime", begin);
+//                intent.putExtra("allDay", false);
+//                intent.putExtra("title", title);
+//                intent.putExtra("endTime", end);
                 startActivity(intent);
                 finish();
 
